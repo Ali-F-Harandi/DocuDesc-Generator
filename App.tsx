@@ -57,28 +57,36 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center p-4 sm:p-8 animate-in fade-in duration-700">
+    <div className="min-h-screen flex flex-col p-4 sm:p-6 bg-slate-950 animate-in fade-in duration-700">
       <ChangelogModal isOpen={isChangelogOpen} onClose={() => setIsChangelogOpen(false)} />
 
-      {/* Header */}
-      <header className="w-full max-w-7xl mb-12 flex flex-col items-center text-center space-y-4">
-        <div className="bg-indigo-500/10 p-4 rounded-2xl border border-indigo-500/20 backdrop-blur-sm">
-          <Terminal className="w-10 h-10 text-indigo-400" />
+      {/* Compact Desktop Header */}
+      <header className="w-full mb-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-slate-800/60 pb-6">
+        <div className="flex items-center gap-4">
+          <div className="bg-indigo-500/10 p-3 rounded-xl border border-indigo-500/20 backdrop-blur-sm">
+            <Terminal className="w-6 h-6 text-indigo-400" />
+          </div>
+          <div>
+            <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
+              DocuDesc Generator
+            </h1>
+            <p className="text-slate-500 text-xs tracking-wide uppercase font-semibold">
+              Professional Research Tool <span className="text-indigo-500/50 mx-2">|</span> v{APP_VERSION}
+            </p>
+          </div>
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
-          DocuDesc Generator
-        </h1>
-        <p className="text-slate-400 max-w-2xl text-lg">
-          Research tool for generating high-fidelity mockup descriptions.
-          Customize country, document type, and format to adapt the template instantly.
+        
+        <p className="text-slate-400 text-sm max-w-xl hidden lg:block text-right">
+          Generate high-fidelity mockup descriptions with semantic precision. 
+          <span className="opacity-50 block text-xs mt-1">Select configuration parameters to adapt the template engine.</span>
         </p>
       </header>
 
-      {/* Main Content */}
-      <main className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-8">
+      {/* Main Content - Full Width Grid */}
+      <main className="w-full flex-grow grid grid-cols-1 lg:grid-cols-12 gap-6">
         
-        {/* Left Column: Configuration */}
-        <div className="lg:col-span-4 space-y-6">
+        {/* Left Column: Configuration (Fixed Sidebar feel) */}
+        <div className="lg:col-span-4 xl:col-span-3 space-y-6">
           <ConfigurationForm onSubmit={handleGenerate} isLoading={loading} />
           
           {error && (
@@ -87,33 +95,33 @@ const App: React.FC = () => {
             </div>
           )}
 
-          <div className="bg-slate-800/50 border border-slate-700 p-6 rounded-xl">
-            <h3 className="text-slate-300 font-medium flex items-center gap-2 mb-3">
+          <div className="bg-slate-900/50 border border-slate-800 p-5 rounded-xl">
+            <h3 className="text-slate-300 font-medium flex items-center gap-2 mb-2 text-sm">
               <Layers className="w-4 h-4 text-emerald-400" />
-              Smart Template Engine
+              Smart Context Engine
             </h3>
-            <p className="text-slate-500 text-sm leading-relaxed">
-              This tool automatically adapts technical specifications (like MRZ codes vs. Barcodes vs. Transactions) based on the selected document type and country context.
+            <p className="text-slate-500 text-xs leading-relaxed">
+              System automatically calibrates technical nomenclature (e.g., ICAO/MRZ standards vs. Banking OCR) based on the target jurisdiction.
             </p>
           </div>
         </div>
 
-        {/* Right Column: Output */}
-        <div className="lg:col-span-8">
+        {/* Right Column: Output (Expansive Canvas) */}
+        <div className="lg:col-span-8 xl:col-span-9 flex flex-col">
           <ResultDisplay result={result} isLoading={loading} />
         </div>
 
       </main>
 
-      {/* Footer */}
-      <footer className="mt-auto pt-12 pb-6 w-full max-w-7xl border-t border-slate-800/50 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-        <div className="flex items-center gap-1.5">
-           <span className="opacity-70">Created by</span>
+      {/* Footer - Full Width */}
+      <footer className="mt-8 pt-6 w-full border-t border-slate-800/50 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-slate-600">
+        <div className="flex items-center gap-2">
+           <span className="opacity-70">Architecture by</span>
            <a 
              href="https://github.com/Ali-F-Harandi" 
              target="_blank" 
              rel="noreferrer"
-             className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400 hover:opacity-80 transition-opacity"
+             className="font-medium text-indigo-400 hover:text-indigo-300 transition-colors"
            >
              Ali F. Harandi
            </a>
@@ -124,10 +132,10 @@ const App: React.FC = () => {
              onClick={() => setIsChangelogOpen(true)}
              className="flex items-center gap-2 hover:text-indigo-400 transition-colors group"
            >
-             <span className="bg-slate-800 px-2 py-0.5 rounded text-xs font-mono group-hover:bg-indigo-500/10 transition-colors">v{APP_VERSION}</span>
-             <span className="text-xs">Changelog</span>
+             <div className="h-2 w-2 rounded-full bg-emerald-500 group-hover:animate-pulse"></div>
+             <span className="text-xs font-mono">System Status: Stable</span>
            </button>
-           <p>© {new Date().getFullYear()} DocuDesc Research.</p>
+           <p className="text-xs opacity-50">© {new Date().getFullYear()} DocuDesc Research.</p>
         </div>
       </footer>
     </div>

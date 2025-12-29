@@ -6,9 +6,20 @@ export interface LogEntry {
   changes: string[];
 }
 
-export const APP_VERSION = "1.1.0";
+export const APP_VERSION = "1.1.1";
 
 export const CHANGELOG_DATA: LogEntry[] = [
+  {
+    version: "1.1.1",
+    date: "2024-05-22",
+    type: "feature",
+    changes: [
+      "UI Overhaul: Switched to a 'Desktop App' style full-width layout (Blender/Photoshop inspired).",
+      "Expanded workspace: Preview area now utilizes 100% of available screen width.",
+      "Redesigned Header: Compact horizontal layout to maximize vertical workspace.",
+      "Optimized Grid: Adjusted column ratios for better sidebar/content balance on large screens."
+    ]
+  },
   {
     version: "1.1.0",
     date: "2024-05-21",
