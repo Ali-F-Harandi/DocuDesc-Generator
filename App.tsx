@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Terminal, Layers, Info, Moon, Sun } from 'lucide-react';
+import { Terminal, Layers, Info, Moon, Sun, Sparkles } from 'lucide-react';
 import { DocumentRequest, GeneratedResponse } from './types';
 import { ConfigurationForm } from './components/ConfigurationForm';
 import { ResultDisplay } from './components/ResultDisplay';
@@ -86,12 +86,16 @@ const App: React.FC = () => {
         {/* Compact Desktop Header */}
         <header className="w-full mb-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800/60 pb-6">
           <div className="flex items-center gap-4">
-            <div className="bg-indigo-500/10 p-3 rounded-xl border border-indigo-500/20 backdrop-blur-sm">
-              <Terminal className="w-6 h-6 text-indigo-500 dark:text-indigo-400" />
+            <div className="bg-indigo-500/10 p-3 rounded-xl border border-indigo-500/20 backdrop-blur-sm relative overflow-hidden group">
+              <Terminal className="w-6 h-6 text-indigo-500 dark:text-indigo-400 relative z-10" />
+              <div className="absolute inset-0 bg-indigo-500/20 blur-md group-hover:bg-indigo-500/30 transition-all"></div>
             </div>
             <div>
-              <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400">
+              <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400 flex items-center gap-2">
                 DocuDesc Generator
+                <span className="text-[10px] bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-2 py-0.5 rounded-full uppercase tracking-wider font-bold flex items-center gap-1">
+                  <Sparkles className="w-2 h-2" /> AI Powered
+                </span>
               </h1>
               <p className="text-slate-500 text-xs tracking-wide uppercase font-semibold">
                 Professional Research Tool <span className="text-indigo-500/50 mx-2">|</span> v{APP_VERSION}
@@ -102,7 +106,7 @@ const App: React.FC = () => {
           <div className="flex items-center gap-6">
              <p className="text-slate-500 dark:text-slate-400 text-sm max-w-xl hidden lg:block text-right">
                Generate high-fidelity mockup descriptions.
-               <span className="opacity-50 block text-xs mt-1">Select configuration parameters to adapt the engine.</span>
+               <span className="opacity-50 block text-xs mt-1">Hybrid Engine: Local Templates + Cloud AI</span>
              </p>
              
              {/* Theme Toggle */}
@@ -132,10 +136,10 @@ const App: React.FC = () => {
             <div className="bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 p-5 rounded-xl shadow-sm dark:shadow-none">
               <h3 className="text-slate-700 dark:text-slate-300 font-medium flex items-center gap-2 mb-2 text-sm">
                 <Layers className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />
-                Smart Context Engine
+                Hybrid Intelligence
               </h3>
               <p className="text-slate-500 text-xs leading-relaxed">
-                System automatically calibrates technical nomenclature (e.g., ICAO/MRZ standards vs. Banking OCR) based on the target jurisdiction.
+                System utilizes free generative AI nodes to write unique description paragraphs, while enforcing strict HTML structure via local templates.
               </p>
             </div>
           </div>

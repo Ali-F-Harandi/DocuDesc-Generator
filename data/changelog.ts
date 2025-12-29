@@ -6,9 +6,20 @@ export interface LogEntry {
   changes: string[];
 }
 
-export const APP_VERSION = "1.2.0";
+export const APP_VERSION = "1.3.0";
 
 export const CHANGELOG_DATA: LogEntry[] = [
+  {
+    version: "1.3.0",
+    date: "2024-05-25",
+    type: "feature",
+    changes: [
+      "AI Integration (No-Key): Integrated Pollinations.ai for free, real-time generative text without requiring an API Key.",
+      "Hybrid Engine: Combines robust HTML templates with dynamic AI-generated content paragraphs.",
+      "Smart Fallback: Automatically switches to the Offline Template Engine if the AI service is unreachable.",
+      "UI Update: Added 'AI Powered' indicators to the interface."
+    ]
+  },
   {
     version: "1.2.0",
     date: "2024-05-24",
