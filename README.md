@@ -38,7 +38,6 @@
 ## 🔐 Security
 
 This application is protected by a client-side SHA-256 hash authentication system.
-- **Default Password:** `mosi`
 - The password logic is handled in `src/utils/security.ts`.
 
 ## 🚀 Deployment

@@ -6,9 +6,18 @@ export interface LogEntry {
   changes: string[];
 }
 
-export const APP_VERSION = "1.1.1";
+export const APP_VERSION = "1.1.2";
 
 export const CHANGELOG_DATA: LogEntry[] = [
+  {
+    version: "1.1.2",
+    date: "2024-05-22",
+    type: "security",
+    changes: [
+      "Documentation Update: Removed sensitive credentials from public README.",
+      "Internal cleanup."
+    ]
+  },
   {
     version: "1.1.1",
     date: "2024-05-22",
