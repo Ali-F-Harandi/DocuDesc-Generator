@@ -5,3 +5,4 @@ dist
 *.log
 DEPLOY_SCRIPT.txt
 DEPLOY_SCRIPT.bat
+.commit_msg
