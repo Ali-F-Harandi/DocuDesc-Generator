@@ -6,9 +6,19 @@ export interface LogEntry {
   changes: string[];
 }
 
-export const APP_VERSION = "1.1.2";
+export const APP_VERSION = "1.1.3";
 
 export const CHANGELOG_DATA: LogEntry[] = [
+  {
+    version: "1.1.3",
+    date: "2024-05-23",
+    type: "feature",
+    changes: [
+      "Added Light/Dark Theme Support: User can now toggle between visual modes.",
+      "Layout Constraints: Added maximum width (1440px) to prevent excessive stretching on large monitors.",
+      "UI Refinements: Improved component contrast in both light and dark modes."
+    ]
+  },
   {
     version: "1.1.2",
     date: "2024-05-22",

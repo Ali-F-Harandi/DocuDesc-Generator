@@ -6,11 +6,17 @@
     <title>DocuDesc GenAI - Mockup Description Generator</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {}
+        }
+      }
+    </script>
     <style>
       body {
         font-family: 'Inter', sans-serif;
-        background-color: #0f172a; /* Slate 900 */
-        color: #e2e8f0; /* Slate 200 */
       }
       /* Custom Scrollbar */
       ::-webkit-scrollbar {
@@ -18,14 +24,20 @@
         height: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #1e293b;
+        background: transparent;
       }
       ::-webkit-scrollbar-thumb {
-        background: #475569;
+        background: #94a3b8;
         border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
         background: #64748b;
+      }
+      .dark ::-webkit-scrollbar-track {
+        background: #1e293b;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: #475569;
       }
     </style>
   <script type="importmap">
@@ -42,7 +54,7 @@
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-  <body>
+  <body class="bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>
