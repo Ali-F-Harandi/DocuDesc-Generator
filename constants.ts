@@ -59,11 +59,7 @@ export const FILE_FORMATS: FileFormat[] = [
 
 export const TEMPLATE_STYLES: TemplateStyle[] = [
   'Professional (Standard)',
-  'Streamlined (Marketing)',
-  'Technical (High-Detail)',
-  'Creative (Designer-Centric)',
-  'Academic (Training/Forensic)',
-  'Blog Review (SEO-Optimized)'
+  'Streamlined (Marketing)'
 ];
 
 export const BASE_TEMPLATE = ``; // Deprecated

@@ -7,11 +7,7 @@ export type FileFormat = 'PSD (Photoshop)' | 'PDF (Editable)' | 'Word (.docx)';
 
 export type TemplateStyle = 
   | 'Professional (Standard)' 
-  | 'Streamlined (Marketing)' 
-  | 'Technical (High-Detail)'
-  | 'Creative (Designer-Centric)'
-  | 'Academic (Training/Forensic)'
-  | 'Blog Review (SEO-Optimized)';
+  | 'Streamlined (Marketing)';
 
 export interface DocumentRequest {
   country: string;

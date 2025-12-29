@@ -6,9 +6,20 @@ export interface LogEntry {
   changes: string[];
 }
 
-export const APP_VERSION = "1.1.3";
+export const APP_VERSION = "1.2.0";
 
 export const CHANGELOG_DATA: LogEntry[] = [
+  {
+    version: "1.2.0",
+    date: "2024-05-24",
+    type: "feature",
+    changes: [
+      "Matrix Generation Engine: Implemented 30 unique text logic states (5 Documents × 3 Formats × 2 Styles).",
+      "Content Specialization: Descriptions now accurately reflect the specific file format (e.g., 'Smart Objects' for PSD vs 'Form Fields' for PDF).",
+      "Streamlined Options: Removed redundant template styles (Blog, Academic, Technical) to focus on Professional and Marketing outputs.",
+      "Enhanced Helpers: Overhauled internal logic to generate realistic technical specifications for Utility Bills and Bank Statements."
+    ]
+  },
   {
     version: "1.1.3",
     date: "2024-05-23",
