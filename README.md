@@ -12,7 +12,7 @@
 
 ## 🛠 Tech Stack
 
-- **Framework:** React 18 + TypeScript
+- **Framework:** React 18 + (TypeScript)
 - **Build Tool:** Vite
 - **Styling:** Tailwind CSS
 - **Deployment:** GitHub Pages (via Custom Action)
